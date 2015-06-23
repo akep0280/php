@@ -21,7 +21,7 @@ file {'/etc/yum.repos.d/my.repo':
   source => $::operatingsystem ? {
     'RedHat' => 'puppet:///modules/php/my.rh.repo',
     'Scientific' => 'puppet:///modules/php/my.sl.repo',
-    'default'  => 'puppet:///modules/php/my.rh.repo',
+    'CentOS'  => 'puppet:///modules/php/my.rh.repo',
     }
   }
 }
