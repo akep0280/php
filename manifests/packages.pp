@@ -25,6 +25,9 @@ file {'/etc/yum.repos.d/my.repo':
     }
   }
 
+package { 'epel-release'
+  ensure => 'present'
+  }
 package { 'remi-release':
   ensure => 'present',
   }
