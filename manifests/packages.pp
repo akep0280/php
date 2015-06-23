@@ -32,7 +32,7 @@ package { 'remi-release':
   ensure => 'present',
   }
 #php/git/mysql-client package list
-$phpinstall = [libgd.so.3, php-fpm, php-mysql, php-opcache, php-common, php-devel, php-mcrypt, php-pear-Auth, php-pear-Auth_HTTP, php-pear-Net-URL2, MySQL-client, MySQL-shared, mod_geoip, cups, php, php-gd, php-odbc, git]
+$phpinstall = [php-fpm, php-mysql, php-opcache, php-common, php-devel, php-mcrypt, php-pear-Auth, php-pear-Auth_HTTP, php-pear-Net-URL2, MySQL-client, MySQL-shared, mod_geoip, cups, php, php-gd, php-odbc, git]
 package { $phpinstall:
   ensure  => "installed",
   require => Package['remi-release'],
