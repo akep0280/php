@@ -1,3 +1,3 @@
 class php {
-  include php::package
+  include php::packages
 }
