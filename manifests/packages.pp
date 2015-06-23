@@ -9,7 +9,7 @@ file {'/etc/yum.repos.d/remi.repo':
   source => $::operatingsystem ? {
     'RedHat' => 'puppet:///modules/php/remi.rh.repo',
     'Scientific' => 'puppet:///modules/php/remi.sl.repo',
-    'CentOS'  =>  'puppet:///modules/php/my.rh.repo',
+    'CentOS'  =>  'puppet:///modules/php/remi.rh.repo',
   }
 }
 #install NASBA package repository
