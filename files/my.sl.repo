@@ -1,0 +1,32 @@
+#base OS
+[base_nasba66]
+name=Scientific Linux-$releasever - Base
+baseurl=http://172.17.16.205/yum/base_nasba66
+gpgcheck=0
+
+#released updates
+[updates_nasba66]
+name=Scientific Linux-$releasever - Updates
+baseurl=http://172.17.16.205/yum/updates_nasba66
+gpgcheck=0
+#gpgkey=http://vm.bb.harker.com/centos/RPM-GPG-KEY-CentOS-5
+
+#nasba local
+[nasba]
+name=NASBA local repository
+baseurl=http://172.17.16.205/yum/nasba
+gpgcheck=0
+
+#remi local
+[remi]
+name=Remi Local Repository
+baseurl=http://172.17.16.205/remi/
+gpgcheck=0
+
+
+[git]
+name=git
+baseurl=http://172.17.16.77/repo/git
+enabled=1
+gpgcheck=0
+You have mail in /var/spool/mail/root
