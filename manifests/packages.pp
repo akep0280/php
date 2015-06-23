@@ -3,7 +3,7 @@ class php::packages {
 #install REMI package repository
 file {'/etc/yum.repos.d/remi.repo':
   ensure => 'file',
-  owner  => 'root'
+  owner  => 'root',
   group  => 'root',
   mode   => '0644',
   source => $::operatingsystem ? {
