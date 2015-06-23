@@ -11,9 +11,9 @@ file {'/etc/yum.repos.d/remi.repo':
     'Scientific' => 'puppet:///modules/php/remi.sl.repo',
     'default'  => fail("Unsupported OS: ${::operatingsystem}"),
   }
-
+}
 #install NASBA package repository
-file {'/etc/yum.repos.d/my.repo'}
+file {'/etc/yum.repos.d/my.repo':
   ensure => 'file',
   owner  => 'root',
   group  => 'root',
@@ -22,4 +22,6 @@ file {'/etc/yum.repos.d/my.repo'}
     'RedHat' => 'puppet:///modules/php/my.rh.repo',
     'Scientific' => 'puppet:///modules/php/my.sl.repo',
     'default'  => fail("Unsupported OS: ${::operatingsystem}"),
+    }
   }
+}
