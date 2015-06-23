@@ -1,4 +1,4 @@
-class php::package {
+class php::packages {
 
 #install REMI package repository
 file {'/etc/yum.repos.d/remi.repo':
@@ -23,5 +23,3 @@ file {'/etc/yum.repos.d/my.repo'}
     'Scientific' => 'puppet:///modules/php/my.sl.repo',
     'default'  => fail("Unsupported OS: ${::operatingsystem}"),
   }
-
-  
