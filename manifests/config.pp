@@ -7,7 +7,7 @@ file {'/etc/php.ini':
   owner  => 'root',
   group  => 'root',
   mode   => '0644',
-  source => puppet:///modules/php/php.ini,
+  source => 'puppet:///modules/php/php.ini',
   }
 
 
