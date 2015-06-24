@@ -7,9 +7,9 @@ file {'/etc/yum.repos.d/remi.repo':
   group  => 'root',
   mode   => '0644',
   source => $::operatingsystem ? {
-    'RedHat' => 'puppet:///modules/php/remi.rh.repo',
+    'RedHat'     => 'puppet:///modules/php/remi.rh.repo',
     'Scientific' => 'puppet:///modules/php/remi.sl.repo',
-    'CentOS'  =>  'puppet:///modules/php/remi.rh.repo',
+    'CentOS'     =>  'puppet:///modules/php/remi.rh.repo',
   }
 }
 #install NASBA package repository
@@ -19,9 +19,9 @@ file {'/etc/yum.repos.d/my.repo':
   group  => 'root',
   mode   => '0644',
   source => $::operatingsystem ? {
-    'RedHat' => 'puppet:///modules/php/my.rh.repo',
+    'RedHat'     => 'puppet:///modules/php/my.rh.repo',
     'Scientific' => 'puppet:///modules/php/my.sl.repo',
-    'CentOS'  => 'puppet:///modules/php/my.rh.repo',
+    'CentOS'     => 'puppet:///modules/php/my.rh.repo',
     }
   }
 
