@@ -10,7 +10,7 @@ enabled=1
 name=Local MySQL 5.6 repository
 baseurl=http://172.17.16.77/repo/MySQL5.6
 gpgcheck=0
-enabled=0
+enabled=1
 
 [git]
 name=Local git repository
