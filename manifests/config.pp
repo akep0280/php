@@ -8,6 +8,7 @@ file {'/etc/php.ini':
   group  => 'root',
   mode   => '0644',
   source => 'puppet:///modules/php/php.ini',
+  required => Package['php'],
   }
 
 
