@@ -1,5 +1,5 @@
 class php::packages {
-
+  include apache
 #install REMI package repository
 file {'/etc/yum.repos.d/remi.repo':
   ensure => 'file',
