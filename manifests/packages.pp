@@ -9,7 +9,7 @@ file {'/etc/yum.repos.d/remi.repo':
   source => $::operatingsystem ? {
     'RedHat'     => 'puppet:///modules/php/remi.rh.repo',
     'Scientific' => 'puppet:///modules/php/remi.sl.repo',
-    'CentOS'     =>  'puppet:///modules/php/remi.rh.repo',
+    'CentOS'     => 'puppet:///modules/php/remi.rh.repo',
   }
 }
 #install NASBA package repository
@@ -32,7 +32,7 @@ package { 'remi-release':
   ensure => 'present',
   }
 #php/git/mysql-client package list
-$phpinstall = [php-fpm, php-mysql, php-opcache, php-common, php-devel, php-mcrypt, php-pear-Auth, php-pear-Auth_HTTP, php-pear-Net-URL2, MySQL-client, MySQL-shared, mod_geoip, cups, php, php-gd, php-odbc, git]
+$phpinstall = [php-fpm, php-mysqlnd, php-opcache, php-common, php-devel, php-mcrypt, php-pear-Auth, php-pear-Auth_HTTP, php-pear-Net-URL2, MySQL-client, MySQL-shared, mod_geoip, cups, php, php-gd, php-odbc, git]
 package { $phpinstall:
   ensure  => "installed",
   require => Package['remi-release'],
