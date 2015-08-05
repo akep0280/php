@@ -36,6 +36,7 @@ $phpinstall = [php-fpm, php-mysqlnd, php-opcache, php-common, php-devel, php-mcr
 package { $phpinstall:
   ensure  => "installed",
   require => Package['remi-release'],
+  notify  => Service["httpd"],
   }
 
 
