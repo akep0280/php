@@ -33,11 +33,25 @@ package { 'remi-release':
   }
 #php/git/mysql-client package list
 $phpinstall = [php-fpm, php-mysqlnd, php-opcache, php-common, php-devel, php-mcrypt, php-pear-Auth, php-pear-Auth_HTTP, php-pear-Net-URL2, MySQL-client, MySQL-shared, cups, php, php-gd, php-odbc, git]
-package { $phpinstall:
+if $::operatingsystem == 'RedHat' {
+  exec { 'repo-enable':
+      command => "/usr/bin/subscription-manager repos --enable=rhel-6-server-optional-rpms",
+      path    => "/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin:/root/bin",
+      }
+
+  package { $phpinstall:
   ensure  => "installed",
   require => Package['remi-release'],
   notify  => Service["httpd"],
   }
+  else {
+  package { $phpinstall:
+  ensure  => "installed",
+  require => Package['remi-release'],
+  notify  => Service["httpd"],
+  }
+}
 
 
+}
 }
